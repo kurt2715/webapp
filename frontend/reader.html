@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>阅读全文 | 简约博客</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">墨</span>
+        <div>
+          <p class="brand-title">简约博客</p>
+          <p class="brand-subtitle">阅读模式</p>
+        </div>
+      </div>
+      <a href="/" class="ghost-btn">返回列表</a>
+    </header>
+
+    <main class="reader-page">
+      <section class="panel reader-panel">
+        <div class="reader-header">
+          <span id="reader-meta" class="reader-meta"></span>
+        </div>
+        <h2 id="reader-title" class="reader-title"></h2>
+        <article id="reader-body" class="reader-body"></article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>所有内容保存在本地浏览器中。</p>
+    </footer>
+
+    <script type="module" src="/src/reader.js"></script>
+  </body>
+</html>
