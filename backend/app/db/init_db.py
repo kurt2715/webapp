@@ -18,10 +18,15 @@ def init_db() -> None:
         existing = db.query(models.User).filter(models.User.username == settings.admin_username).first()
         if existing:
             return
+        raw_password = settings.admin_password.strip()
+        if not raw_password:
+            return
+        # bcrypt max password length is 72 bytes; truncate to avoid crash
+        safe_password = raw_password[:72]
         admin_user = models.User(
             username=settings.admin_username,
             email=settings.admin_email or f"{settings.admin_username}@example.com",
-            password_hash=hash_password(settings.admin_password),
+            password_hash=hash_password(safe_password),
             role="admin",
         )
         db.add(admin_user)
