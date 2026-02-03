@@ -27,6 +27,19 @@
         </div>
         <h2 id="reader-title" class="reader-title"></h2>
         <article id="reader-body" class="reader-body"></article>
+
+        <section class="comments">
+          <div class="comments-header">
+            <h3>评论</h3>
+            <span id="comment-count" class="pill">0 条</span>
+          </div>
+          <div id="comment-list" class="comment-list"></div>
+          <form id="comment-form" class="comment-form">
+            <textarea id="comment-input" rows="3" placeholder="写下你的评论..." required></textarea>
+            <button type="submit" class="primary-btn">发布评论</button>
+            <p id="comment-hint" class="comment-hint">请先登录后再评论。</p>
+          </form>
+        </section>
       </section>
     </main>
 

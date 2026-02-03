@@ -5,12 +5,12 @@ from app.models.tag import Tag
 from app.schemas.post import PostCreate, PostUpdate
 
 
-def create_post(db: Session, post_in: PostCreate) -> Post:
+def create_post(db: Session, post_in: PostCreate, author_id: int) -> Post:
     post = Post(
         title=post_in.title,
         body=post_in.body,
         summary=post_in.summary,
-        author_id=post_in.author_id,
+        author_id=author_id,
         category_id=post_in.category_id,
         published_at=post_in.published_at,
     )

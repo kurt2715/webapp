@@ -10,6 +10,11 @@ class CategoryCreate(CategoryBase):
     pass
 
 
+class CategoryUpdate(BaseModel):
+    name: str | None = None
+    slug: str | None = None
+
+
 class CategoryOut(CategoryBase):
     model_config = ConfigDict(from_attributes=True)
     id: int

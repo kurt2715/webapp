@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 
+from app.api.v1.auth import router as auth_router
 from app.api.v1.users import router as users_router
 from app.api.v1.categories import router as categories_router
 from app.api.v1.tags import router as tags_router
@@ -16,6 +17,7 @@ def health_check() -> dict:
 
 api_router = APIRouter()
 api_router.include_router(health_router, tags=["health"])
+api_router.include_router(auth_router, tags=["auth"])
 api_router.include_router(users_router, tags=["users"])
 api_router.include_router(categories_router, tags=["categories"])
 api_router.include_router(tags_router, tags=["tags"])

@@ -17,6 +17,18 @@
           <p class="brand-subtitle">写下当下，保存灵感</p>
         </div>
       </div>
+      <div class="auth">
+        <form id="login-form" class="auth-form">
+          <input id="login-username" type="text" placeholder="用户名" />
+          <input id="login-password" type="password" placeholder="密码" />
+          <button type="submit" class="primary-btn">登录</button>
+          <a href="/login.html" class="ghost-btn">登录页</a>
+        </form>
+        <div id="user-panel" class="user-panel hidden">
+          <span id="current-user"></span>
+          <button type="button" id="logout" class="ghost-btn">退出</button>
+        </div>
+      </div>
       <button id="new-post" class="ghost-btn">新建文章</button>
     </header>
 
@@ -47,6 +59,14 @@
             内容
             <textarea id="body" rows="10" placeholder="写下你的想法..." required></textarea>
           </label>
+          <label>
+            分类
+            <select id="category"></select>
+          </label>
+          <div class="tag-picker">
+            <span>标签</span>
+            <div id="tag-list" class="tag-list"></div>
+          </div>
           <div class="meta">
             <div>
               <span>字数</span>

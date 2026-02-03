@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 | 简约博客</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">墨</span>
+        <div>
+          <p class="brand-title">简约博客</p>
+          <p class="brand-subtitle">登录</p>
+        </div>
+      </div>
+      <a href="/" class="ghost-btn">返回首页</a>
+    </header>
+
+    <main class="reader-page">
+      <section class="panel reader-panel login-panel">
+        <h2>账号登录</h2>
+        <form id="login-page-form" class="login-form">
+          <label>
+            用户名
+            <input id="login-page-username" type="text" placeholder="admin" required />
+          </label>
+          <label>
+            密码
+            <input id="login-page-password" type="password" placeholder="admin" required />
+          </label>
+          <button type="submit" class="primary-btn">登录</button>
+          <p id="login-page-error" class="comment-hint hidden"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>所有内容保存在本地浏览器中。</p>
+    </footer>
+
+    <script type="module" src="/src/login.js"></script>
+  </body>
+</html>

@@ -13,3 +13,4 @@ class UserCreate(UserBase):
 class UserOut(UserBase):
     model_config = ConfigDict(from_attributes=True)
     id: int
+    role: str

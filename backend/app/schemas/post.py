@@ -3,19 +3,16 @@ from typing import List, Optional
 
 from pydantic import BaseModel, ConfigDict
 
+from app.schemas.tag import TagOut
 
-class PostBase(BaseModel):
+
+class PostCreate(BaseModel):
     title: str
     body: str
     summary: Optional[str] = None
-    author_id: int
     category_id: Optional[int] = None
     tag_ids: List[int] = []
     published_at: Optional[datetime] = None
-
-
-class PostCreate(PostBase):
-    pass
 
 
 class PostUpdate(BaseModel):
@@ -27,8 +24,15 @@ class PostUpdate(BaseModel):
     published_at: Optional[datetime] = None
 
 
-class PostOut(PostBase):
+class PostOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: int
+    title: str
+    body: str
+    summary: Optional[str] = None
+    author_id: int
+    category_id: Optional[int] = None
+    tags: List[TagOut] = []
     created_at: datetime
     updated_at: Optional[datetime] = None
+    published_at: Optional[datetime] = None
