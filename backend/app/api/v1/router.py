@@ -1,12 +1,23 @@
 from fastapi import APIRouter
 
-router = APIRouter()
+from app.api.v1.users import router as users_router
+from app.api.v1.categories import router as categories_router
+from app.api.v1.tags import router as tags_router
+from app.api.v1.posts import router as posts_router
+from app.api.v1.comments import router as comments_router
+
+health_router = APIRouter()
 
 
-@router.get("/health")
+@health_router.get("/health")
 def health_check() -> dict:
     return {"status": "ok"}
 
 
 api_router = APIRouter()
-api_router.include_router(router, tags=["health"])
+api_router.include_router(health_router, tags=["health"])
+api_router.include_router(users_router, tags=["users"])
+api_router.include_router(categories_router, tags=["categories"])
+api_router.include_router(tags_router, tags=["tags"])
+api_router.include_router(posts_router, tags=["posts"])
+api_router.include_router(comments_router, tags=["comments"])
