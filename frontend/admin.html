@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理后台 | 简约博客</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">墨</span>
+        <div>
+          <p class="brand-title">简约博客</p>
+          <p class="brand-subtitle">管理后台</p>
+        </div>
+      </div>
+      <a href="/" class="ghost-btn">返回首页</a>
+    </header>
+
+    <main class="reader-page">
+      <section class="panel reader-panel">
+        <div class="panel-header">
+          <h2>分类管理</h2>
+          <button type="button" id="add-category" class="primary-btn">新增分类</button>
+        </div>
+        <div id="category-list" class="admin-list"></div>
+      </section>
+
+      <section class="panel reader-panel">
+        <div class="panel-header">
+          <h2>标签管理</h2>
+          <button type="button" id="add-tag" class="primary-btn">新增标签</button>
+        </div>
+        <div id="tag-admin-list" class="admin-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>所有内容保存在本地浏览器中。</p>
+    </footer>
+
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>

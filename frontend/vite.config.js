@@ -16,6 +16,8 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         reader: resolve(__dirname, "reader.html"),
         login: resolve(__dirname, "login.html"),
+        edit: resolve(__dirname, "edit.html"),
+        admin: resolve(__dirname, "admin.html"),
       },
     },
   },

@@ -17,23 +17,16 @@
           <p class="brand-subtitle">写下当下，保存灵感</p>
         </div>
       </div>
-      <div class="auth">
-        <form id="login-form" class="auth-form">
-          <input id="login-username" type="text" placeholder="用户名" />
-          <input id="login-password" type="password" placeholder="密码" />
-          <button type="submit" class="primary-btn">登录</button>
-          <a href="/login.html" class="ghost-btn">登录页</a>
-        </form>
-        <div id="user-panel" class="user-panel hidden">
-          <span id="current-user"></span>
-          <button type="button" id="logout" class="ghost-btn">退出</button>
-        </div>
+      <div class="header-actions">
+        <a id="login-link" href="/login.html" class="ghost-btn">登录</a>
+        <a id="admin-link" href="/admin.html" class="ghost-btn hidden">管理</a>
+        <button id="logout" class="ghost-btn hidden">退出登录</button>
+        <button id="new-post" class="ghost-btn hidden">新建文章</button>
       </div>
-      <button id="new-post" class="ghost-btn">新建文章</button>
     </header>
 
-    <main class="layout">
-      <section class="panel list-panel">
+    <main class="layout single">
+      <section class="panel list-panel full">
         <div class="panel-header">
           <h2>我的文章</h2>
           <span id="post-count" class="pill">0 篇</span>
@@ -43,45 +36,6 @@
           <p>还没有文章。</p>
           <p>从右侧开始写下第一篇。</p>
         </div>
-      </section>
-
-      <section class="panel editor-panel">
-        <div class="panel-header">
-          <h2>编辑区</h2>
-          <span id="editor-status" class="status">新建</span>
-        </div>
-        <form id="post-form" class="editor">
-          <label>
-            标题
-            <input id="title" type="text" placeholder="输入标题" required maxlength="80" />
-          </label>
-          <label>
-            内容
-            <textarea id="body" rows="10" placeholder="写下你的想法..." required></textarea>
-          </label>
-          <label>
-            分类
-            <select id="category"></select>
-          </label>
-          <div class="tag-picker">
-            <span>标签</span>
-            <div id="tag-list" class="tag-list"></div>
-          </div>
-          <div class="meta">
-            <div>
-              <span>字数</span>
-              <strong id="word-count">0</strong>
-            </div>
-            <div>
-              <span>上次更新</span>
-              <strong id="updated-at">-</strong>
-            </div>
-          </div>
-          <div class="actions">
-            <button type="submit" class="primary-btn">保存</button>
-            <button type="button" id="cancel-edit" class="ghost-btn">取消编辑</button>
-          </div>
-        </form>
       </section>
     </main>
 

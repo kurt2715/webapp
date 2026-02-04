@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编辑文章 | 简约博客</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">墨</span>
+        <div>
+          <p class="brand-title">简约博客</p>
+          <p class="brand-subtitle">编辑文章</p>
+        </div>
+      </div>
+      <a href="/" class="ghost-btn">返回首页</a>
+    </header>
+
+    <main class="reader-page">
+      <section class="panel reader-panel">
+        <div class="panel-header">
+          <h2>编辑区</h2>
+          <span id="editor-status" class="status">新建</span>
+        </div>
+        <form id="post-form" class="editor">
+          <label>
+            标题
+            <input id="title" type="text" placeholder="输入标题" required maxlength="80" />
+          </label>
+          <label>
+            内容
+            <textarea id="body" rows="12" placeholder="写下你的想法..." required></textarea>
+          </label>
+          <label>
+            分类
+            <select id="category"></select>
+          </label>
+          <div class="tag-picker">
+            <span>标签</span>
+            <div id="tag-list" class="tag-list"></div>
+          </div>
+          <div class="meta">
+            <div>
+              <span>字数</span>
+              <strong id="word-count">0</strong>
+            </div>
+            <div>
+              <span>上次更新</span>
+              <strong id="updated-at">-</strong>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="primary-btn">保存</button>
+            <button type="button" id="cancel-edit" class="ghost-btn">取消编辑</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>所有内容保存在本地浏览器中。</p>
+    </footer>
+
+    <script type="module" src="/src/edit.js"></script>
+  </body>
+</html>

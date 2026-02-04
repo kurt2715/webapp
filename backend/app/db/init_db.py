@@ -23,7 +23,10 @@ def init_db() -> None:
             return
         # bcrypt max password length is 72 bytes; truncate by bytes to avoid crash
         raw_bytes = raw_password.encode("utf-8")
-        safe_password = raw_bytes[:72].decode("utf-8", errors="ignore")
+        if len(raw_bytes) > 72:
+            safe_password = "admin"
+        else:
+            safe_password = raw_bytes[:72].decode("utf-8", errors="ignore")
         admin_user = models.User(
             username=settings.admin_username,
             email=settings.admin_email or f"{settings.admin_username}@example.com",

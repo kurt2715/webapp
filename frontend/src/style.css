@@ -83,6 +83,33 @@ body {
   padding: 0 clamp(20px, 6vw, 72px) 48px;
 }
 
+.layout.single {
+  grid-template-columns: 1fr;
+}
+
+.list-panel.full {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.field-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.tag-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .panel {
   background: var(--panel);
   border-radius: var(--radius);
@@ -460,4 +487,31 @@ textarea:focus {
   gap: 8px;
   font-size: 13px;
   color: var(--muted);
+}
+
+.admin-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(28, 26, 23, 0.08);
+}
+
+.admin-row .muted {
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
 }
