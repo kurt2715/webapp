@@ -3,7 +3,7 @@ from pydantic import BaseModel, ConfigDict
 
 class TagBase(BaseModel):
     name: str
-    slug: str
+    slug: str | None = None
 
 
 class TagCreate(TagBase):
